@@ -5,7 +5,7 @@ Xray client <--- gRPC(TLS) ---> Caddy2 <--- gRPC(cleartext) ---> Xray server
 同时，您也可以选择使用 Nginx。示例配置片段如下（部分来自 [@xqzr](https://github.com/xqzr)）：
 ```conf
 server {
-	listen 443 ssl http2;
+	listen 443 ssl http2 so_keepalive=on;
 	server_name example.com;
 
 	index index.html;
@@ -24,6 +24,7 @@ server {
 			return 404;
 		}
 		client_max_body_size 0;
+		grpc_set_header X-Real-IP $proxy_add_x_forwarded_for;
 		client_body_timeout 1071906480m;
 		grpc_read_timeout 1071906480m;
 		grpc_pass grpc://127.0.0.1:2002;
