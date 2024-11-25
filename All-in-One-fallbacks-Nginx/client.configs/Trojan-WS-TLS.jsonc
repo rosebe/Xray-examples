@@ -14,25 +14,20 @@
   ],
   "outbounds": [
     {
-      "protocol": "vless",
+      "protocol": "trojan",
       "settings": {
-        "vnext": [
+        "servers": [
           {
             "address": "example.com",
             "port": 443,
-            "users": [
-              {
-                "id": "90e4903e-66a4-45f7-abda-fd5d5ed7f797",
-                "encryption": "none"
-              }
-            ]
+            "password": "desdemona99"
           }
         ]
       },
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/vlws?ed=2048"
+          "path": "/trojanws?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {

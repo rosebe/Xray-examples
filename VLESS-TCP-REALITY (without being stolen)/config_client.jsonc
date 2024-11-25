@@ -1,3 +1,4 @@
+// 直接从其他示例里 copy 过来的，客户端不需要任何特殊修改，要填的东西也一致
 {
     "log": {
         "loglevel": "debug"
@@ -27,13 +28,12 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "", 
+                        "address": "127.0.0.1", 
                         "port": 443, 
                         "users": [
                             {
                                 "id": "", // Needs to match server side
-                                "encryption": "none",
-                                "flow": "xtls-rprx-vision"
+                                "encryption": "none"
                             }
                         ]
                     }
@@ -44,10 +44,10 @@
                 "security": "reality",
                 "realitySettings": {
                     "fingerprint": "chrome", 
-                    "serverName": "", // A website that support TLS1.3 and h2. If your dest is `1.1.1.1:443`, then leave it empty
-                    "publicKey": "", // run `xray x25519` to generate. Public and private keys need to be corresponding.
-                    "spiderX": "", // If your dest is `1.1.1.1:443`, then you can fill it with `/dns-query/` or just leave it empty
-                    "shortId": "" // Required
+                    "serverName": "speed.cloudflare.com",
+                    "publicKey": "",
+                    "spiderX": "",
+                    "shortId": ""
                 }
             },
             "tag": "proxy"

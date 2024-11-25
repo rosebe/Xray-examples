@@ -14,20 +14,21 @@
   ],
   "outbounds": [
     {
-      "protocol": "trojan",
+      "protocol": "shadowsocks",
       "settings": {
         "servers": [
           {
-            "address": "example.com",
+            "address": "example.com", // Change to you own domain
             "port": 443,
-            "password": "desdemona99"
+            "method": "chacha20-ietf-poly1305",
+            "password": "desdemona99" // Change to you own password
           }
         ]
       },
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/trojanws?ed=2048"
+          "path": "/ssws?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {

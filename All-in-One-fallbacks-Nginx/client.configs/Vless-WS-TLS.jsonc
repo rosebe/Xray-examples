@@ -14,21 +14,25 @@
   ],
   "outbounds": [
     {
-      "protocol": "shadowsocks",
+      "protocol": "vless",
       "settings": {
-        "servers": [
+        "vnext": [
           {
-            "address": "example.com", // Change to you own domain
+            "address": "example.com",
             "port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "desdemona99" // Change to you own password
+            "users": [
+              {
+                "id": "90e4903e-66a4-45f7-abda-fd5d5ed7f797",
+                "encryption": "none"
+              }
+            ]
           }
         ]
       },
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/ssws?ed=2048"
+          "path": "/vlws?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {
