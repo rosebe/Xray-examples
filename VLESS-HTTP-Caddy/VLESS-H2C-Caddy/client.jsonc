@@ -19,18 +19,11 @@
     {
       "protocol": "vless",
       "settings": {
-        "vnext": [
-          {
-            "address": "xx.com",
-            "port": 443,
-            "users": [
-              {
-                "id": "",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
+        "address": "xx.com",
+        "port": 443,
+        "id": "",
+        // 使用 xray vlessenc 生成这里的参数，客户端 encryption 须与服务端 decryption 配对
+        "encryption": "mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.<客户端公钥>"
       },
       "streamSettings": {
         "network": "h2",
